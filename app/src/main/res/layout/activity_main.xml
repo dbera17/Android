@@ -77,7 +77,7 @@
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_32"
+        android:layout_marginBottom="@dimen/margin_16"
         android:text="@string/sing_up"
         android:textSize="@dimen/text_size"
         android:textColor="@color/grey"
