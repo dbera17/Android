@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FinalProject</string>
+    <!-- My Strings-->
+    <string name="nickname_placeholder">Enter your nickname</string>
+    <string name="password_placeholder">Enter your password</string>
+    <string name="profession_placeholder">What I do</string>
+    <string name="sing_up">SIGN UP</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="not_register_label">Not registered?</string>
 </resources>
