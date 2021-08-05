@@ -2,6 +2,7 @@
 <resources>
     <dimen name="input_border_radius">50dp</dimen>
     <dimen name="border_radius">20dp</dimen>
+    <dimen name="button_border_radius">6dp</dimen>
 
     <dimen name="avatar_image_size">180dp</dimen>
 
