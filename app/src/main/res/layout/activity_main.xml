@@ -10,7 +10,7 @@
         android:id="@+id/avatar_image"
         android:layout_width="@dimen/avatar_image_size"
         android:layout_height="@dimen/avatar_image_size"
-        android:layout_marginTop="@dimen/margin_64"
+        android:layout_marginTop="@dimen/margin_128"
         android:contentDescription="@string/todo"
         android:src="@drawable/avatar_image_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
         android:id="@+id/suggestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_4"
         android:text="@string/not_register_label"
         android:textSize="@dimen/not_register_label_size"
         app:layout_constraintBottom_toTopOf="@+id/sign_up"
@@ -88,6 +88,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="@color/grey"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick,UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
