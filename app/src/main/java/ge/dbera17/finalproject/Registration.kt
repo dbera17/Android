@@ -7,6 +7,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.FirebaseDatabase
+
+
 class Registration : AppCompatActivity() {
     private lateinit var nickname: EditText
     private lateinit var password: EditText
@@ -14,10 +21,19 @@ class Registration : AppCompatActivity() {
 
     private lateinit var signUp: Button
 
+    private lateinit var db : FirebaseDatabase
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registration)
+        setUpFirebase()
         setUpItems()
+    }
+
+    private fun setUpFirebase() {
+        db = Firebase.database
+        auth = Firebase.auth
     }
 
     private fun setUpItems() {
@@ -33,9 +49,32 @@ class Registration : AppCompatActivity() {
 
     private fun signUpNewUser() {
         if(nickname.text.isNotEmpty() && password.text.isNotEmpty() && profession.text.isNotEmpty()){
-            Toast.makeText(this, "Create User", Toast.LENGTH_LONG).show()
+            val nickname = nickname.text.toString()
+            val password = password.text.toString()
+            val profession = profession.text.toString()
+            addUserToDB(nickname, password, profession)
         } else {
             Toast.makeText(this, "Please fill in all the fields", Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun addUserToDB(name:String, pwd:String, prof:String) {
+        val users =  db.getReference("users")
+
+        val gmail = "$name@gmail.com"
+        auth.createUserWithEmailAndPassword(gmail, pwd)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    users.push().key?.let{
+                        users.child(name).setValue(
+                            User(name, pwd, prof)
+                        )
+                    }
+                    Toast.makeText(this, "GO TO MAIN PAGE, COMING SOON", Toast.LENGTH_LONG).show()
+                } else {
+                    val errorMessage = task.exception?.message.toString()
+                    Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+                }
+            }
     }
 }
