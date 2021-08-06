@@ -38,9 +38,9 @@ class Registration : AppCompatActivity() {
 
     private fun setUpItems() {
         signUp = findViewById(R.id.rp_sign_up)
-        nickname = findViewById(R.id.nickname)
-        password = findViewById(R.id.password)
-        profession = findViewById(R.id.profession)
+        nickname = findViewById(R.id.rp_nickname)
+        password = findViewById(R.id.rp_password)
+        profession = findViewById(R.id.rp_profession)
 
         signUp.setOnClickListener {
             signUpNewUser()
@@ -61,8 +61,8 @@ class Registration : AppCompatActivity() {
     private fun addUserToDB(name:String, pwd:String, prof:String) {
         val users =  db.getReference("users")
 
-        val gmail = "$name@gmail.com"
-        auth.createUserWithEmailAndPassword(gmail, pwd)
+        val email = "$name@gmail.com"
+        auth.createUserWithEmailAndPassword(email, pwd)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     users.push().key?.let{

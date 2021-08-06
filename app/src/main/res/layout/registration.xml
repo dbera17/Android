@@ -7,7 +7,7 @@
     tools:context=".Registration">
 
     <ImageView
-        android:id="@+id/avatar_image"
+        android:id="@+id/rp_avatar_image"
         android:layout_width="@dimen/avatar_image_size"
         android:layout_height="@dimen/avatar_image_size"
         android:layout_marginTop="@dimen/margin_128"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nickname"
+        android:id="@+id/rp_nickname"
         android:layout_width="@dimen/input_item_width"
         android:layout_height="@dimen/input_item_height"
         android:layout_marginTop="@dimen/margin_32"
@@ -30,11 +30,11 @@
         android:paddingVertical="@dimen/padding_8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar_image"
+        app:layout_constraintTop_toBottomOf="@+id/rp_avatar_image"
         android:autofillHints="username" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/rp_password"
         android:layout_width="@dimen/input_item_width"
         android:layout_height="@dimen/input_item_height"
         android:layout_marginTop="@dimen/margin_8"
@@ -46,11 +46,11 @@
         android:paddingVertical="@dimen/padding_8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname"
+        app:layout_constraintTop_toBottomOf="@+id/rp_nickname"
         android:autofillHints="password" />
 
     <EditText
-        android:id="@+id/profession"
+        android:id="@+id/rp_profession"
         android:layout_width="@dimen/input_item_width"
         android:layout_height="@dimen/input_item_height"
         android:layout_marginTop="@dimen/margin_16"
@@ -63,7 +63,7 @@
         android:paddingVertical="@dimen/padding_8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/rp_password" />
 
     <Button
         android:id="@+id/rp_sign_up"
@@ -76,7 +76,7 @@
         android:textSize="@dimen/text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profession" />
+        app:layout_constraintTop_toBottomOf="@+id/rp_profession" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
