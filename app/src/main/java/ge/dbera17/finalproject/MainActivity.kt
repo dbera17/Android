@@ -51,7 +51,8 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, pwd)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "GO TO MAIN PAGE, COMING SOON", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, MainPage::class.java)
+                    startActivity(intent)
                 } else {
                     val errorMessage = task.exception?.message.toString()
                     Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToRegistration() {
-        val registrationPageInt = Intent(this, Registration::class.java)
+        val registrationPageInt = Intent(this, MainPage::class.java)
         startActivity(registrationPageInt)
     }
 }

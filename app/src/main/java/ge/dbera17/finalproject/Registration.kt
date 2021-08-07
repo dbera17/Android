@@ -1,5 +1,6 @@
 package ge.dbera17.finalproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -70,7 +71,8 @@ class Registration : AppCompatActivity() {
                             User(name, pwd, prof)
                         )
                     }
-                    Toast.makeText(this, "GO TO MAIN PAGE, COMING SOON", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, MainPage::class.java)
+                    startActivity(intent)
                 } else {
                     val errorMessage = task.exception?.message.toString()
                     Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()

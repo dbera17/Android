@@ -8,4 +8,5 @@
     <string name="sign_in">SIGN IN</string>
     <string name="not_register_label">Not registered?</string>
     <string name="todo">TODO</string>
+    <string name="search_placeholder">Search</string>
 </resources>
