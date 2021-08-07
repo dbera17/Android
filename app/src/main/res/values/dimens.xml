@@ -17,7 +17,7 @@
     <dimen name="margin_128">128dp</dimen>
 
     <dimen name="padding_8">8dp</dimen>
-    <dimen name="padding_42">42dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
 
     <dimen name="not_register_label_size">16sp</dimen>
 
