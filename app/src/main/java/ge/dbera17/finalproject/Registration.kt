@@ -71,8 +71,8 @@ class Registration : AppCompatActivity() {
                             User(name, pwd, prof)
                         )
                     }
-                    val intent = Intent(this, MainPage::class.java)
-                    startActivity(intent)
+                    val mainPageInt = Intent(this, MainPage::class.java)
+                    startActivity(mainPageInt)
                 } else {
                     val errorMessage = task.exception?.message.toString()
                     Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()

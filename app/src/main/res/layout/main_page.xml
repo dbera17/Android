@@ -36,7 +36,7 @@
                 android:layout_gravity="bottom">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlinedTextField"
+                    android:id="@+id/mp_search"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/search_placeholder"
@@ -75,14 +75,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-<!--            TODO TODO TODO TODO TODO-->
+            <!--            TODO TODO TODO TODO TODO-->
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/plus"
+        android:id="@+id/mp_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
@@ -102,18 +102,18 @@
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored">
 
         <ImageButton
-            android:id="@+id/home"
+            android:id="@+id/mp_home"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:src="@drawable/ic_home"
-            app:startIconTint="@color/icon_color"
             android:backgroundTint="@color/white"
             android:layout_gravity="start"
             android:layout_marginHorizontal="@dimen/margin_64"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            app:tint="@color/blue" />
 
         <ImageButton
-            android:id="@+id/settings"
+            android:id="@+id/mp_profile"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:src="@drawable/ic_settings"
