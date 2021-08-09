@@ -1,5 +1,6 @@
 package ge.dbera17.finalproject
 
+import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
@@ -47,7 +48,8 @@ class MainPage : AppCompatActivity() {
             Toast.makeText(this, "GO TO SEARCH PAGE", Toast.LENGTH_LONG).show()
         }
         profileBtn.setOnClickListener {
-            Toast.makeText(this, "GO TO PROFILE", Toast.LENGTH_LONG).show()
+            val profilePageInt = Intent(this, ProfilePage::class.java)
+            startActivity(profilePageInt)
         }
     }
 }
