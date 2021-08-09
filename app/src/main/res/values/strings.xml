@@ -9,4 +9,10 @@
     <string name="not_register_label">Not registered?</string>
     <string name="todo">TODO</string>
     <string name="search_placeholder">Search</string>
+
+    <string name="change_nickname_placeholder">nickname</string>
+    <string name="change_profession_placeholder">profession</string>
+
+    <string name="update">UPDATE</string>
+    <string name="sign_out">SIGN OUT</string>
 </resources>

@@ -7,15 +7,90 @@
     android:layout_height="match_parent"
     tools:context=".ProfilePage">
 
-    <ImageView
-        android:id="@+id/pp_avatar_image"
-        android:layout_width="@dimen/avatar_image_size"
-        android:layout_height="@dimen/avatar_image_size"
-        android:layout_marginTop="@dimen/margin_128"
-        android:layout_gravity="center_horizontal"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/avatar_image_placeholder"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        tools:context=".MainActivity">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pp_avatar_image"
+            android:layout_width="@dimen/avatar_image_size"
+            android:layout_height="@dimen/avatar_image_size"
+            android:layout_marginTop="@dimen/margin_128"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/profile_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/pp_nickname"
+            android:layout_width="@dimen/input_item_width"
+            android:layout_height="@dimen/input_item_height"
+            android:layout_marginTop="@dimen/margin_32"
+            android:autofillHints="username"
+            android:background="@drawable/input_item"
+            android:gravity="center"
+            android:hint="@string/change_nickname_placeholder"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingVertical="@dimen/padding_8"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_avatar_image" />
+
+        <EditText
+            android:id="@+id/pp_profession"
+            android:layout_width="@dimen/input_item_width"
+            android:layout_height="@dimen/input_item_height"
+            android:layout_marginTop="@dimen/margin_8"
+            android:autofillHints="profession"
+            android:background="@drawable/input_item"
+            android:gravity="center"
+            android:hint="@string/change_profession_placeholder"
+            android:inputType="textPassword"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingVertical="@dimen/padding_8"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_nickname" />
+
+        <Button
+            android:id="@+id/pp_update"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="sans-serif"
+            android:text="@string/update"
+            android:textSize="@dimen/text_size"
+            app:cornerRadius="@dimen/button_border_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_profession" />
+
+        <Button
+            android:id="@+id/pp_sign_out"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:fontFamily="sans-serif"
+            android:text="@string/sign_out"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size"
+            app:cornerRadius="@dimen/button_border_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_update"
+            app:strokeColor="@color/grey"
+            tools:ignore="OnClick,UsingOnClickInXml" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/mp_add"
