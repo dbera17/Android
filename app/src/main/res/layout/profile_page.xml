@@ -28,7 +28,7 @@
             android:layout_width="@dimen/input_item_width"
             android:layout_height="@dimen/input_item_height"
             android:layout_marginTop="@dimen/margin_32"
-            android:autofillHints="username"
+            android:autofillHints="@string/change_nickname_placeholder"
             android:background="@drawable/input_item"
             android:gravity="center"
             android:hint="@string/change_nickname_placeholder"
@@ -93,7 +93,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/mp_add"
+        android:id="@+id/pp_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
@@ -113,7 +113,7 @@
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored">
 
         <ImageButton
-            android:id="@+id/mp_home"
+            android:id="@+id/pp_home"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:src="@drawable/ic_home"
