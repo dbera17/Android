@@ -25,19 +25,13 @@ class MainPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
 
+        auth = Firebase.auth
         search = findViewById(R.id.mp_search)
         addBtn = findViewById(R.id.mp_add)
         homeBtn = findViewById(R.id.mp_home)
         profileBtn = findViewById(R.id.mp_profile)
 
-        setUpFirebaseAuth()
         setUpButtonListeners()
-    }
-
-    private  fun setUpFirebaseAuth() {
-        auth = Firebase.auth
-        val user = auth.currentUser?.email.toString()
-        Toast.makeText(this, user, Toast.LENGTH_LONG).show()
     }
 
     private fun setUpButtonListeners() {
