@@ -1,6 +1,5 @@
 package ge.dbera17.finalproject
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -75,13 +73,14 @@ class ProfilePage  : AppCompatActivity() {
         userInfo = activeUser.getUserInfo(prevNickname)
     }
 
-    private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val data: Intent? = result.data
-            val selectedImage: Uri = data?.data!!
-
-            newImage.setImageURI(selectedImage)
-            activeUser.uploadUserImage(prevNickname, selectedImage)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            if (data != null) {
+                imageUri = data.data
+                newImage.setImageURI(imageUri)
+                activeUser.uploadUserImage(prevNickname, imageUri!!)
+            }
         }
     }
 
@@ -107,8 +106,8 @@ class ProfilePage  : AppCompatActivity() {
             startActivity(starterPageInt)
         }
         newImage.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            resultLauncher.launch(intent)
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
         }
     }
 }
