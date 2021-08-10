@@ -1,9 +1,10 @@
-package ge.dbera17.finalproject
+package ge.dbera17.finalproject.pages
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -14,12 +15,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import de.hdodenhof.circleimageview.CircleImageView
+import ge.dbera17.finalproject.MainActivity
+import ge.dbera17.finalproject.R
+import ge.dbera17.finalproject.interfaces.UserInterface
+import ge.dbera17.finalproject.userClasses.ActiveUserMediator
+import ge.dbera17.finalproject.userClasses.User
 
-class ProfilePage  : AppCompatActivity() {
+class ProfilePage  : AppCompatActivity(), UserInterface {
     private lateinit var auth: FirebaseAuth
 
-    private lateinit var activeUser: ActiveUser
-    private lateinit var userInfo: User
+    private lateinit var activeUser: ActiveUserMediator
     private lateinit var update: Button
     private lateinit var signOut: Button
 
@@ -52,16 +57,6 @@ class ProfilePage  : AppCompatActivity() {
         newProfession = findViewById(R.id.pp_profession)
 
         setUpButtonListeners()
-        showUserInfo()
-    }
-
-    private fun showUserInfo() {
-        newNickname.setText(userInfo.nickname)
-        newProfession.setText(userInfo.profession)
-
-        if (userInfo.image != null) {
-            newImage.setImageBitmap(userInfo.image)
-        }
     }
 
     private  fun setUpFirebaseAuth() {
@@ -69,8 +64,8 @@ class ProfilePage  : AppCompatActivity() {
         val user = auth.currentUser
         val userEmail = user?.email.toString()
         prevNickname = userEmail.removeSuffix("@gmail.com")
-        activeUser = ActiveUser()
-        userInfo = activeUser.getUserInfo(prevNickname)
+        activeUser = ActiveUserMediator(this)
+        activeUser.getUserInfo(prevNickname)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -102,12 +97,21 @@ class ProfilePage  : AppCompatActivity() {
         }
         signOut.setOnClickListener {
             Firebase.auth.signOut()
-            val starterPageInt = Intent(this,MainActivity::class.java)
+            val starterPageInt = Intent(this, MainActivity::class.java)
             startActivity(starterPageInt)
         }
         newImage.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
+        }
+    }
+
+    override fun showUserInfo(user: User) {
+        newNickname.setText(user.nickname)
+        newProfession.setText(user.profession)
+
+        if (user.image != null) {
+            newImage.setImageBitmap(user.image)
         }
     }
 }

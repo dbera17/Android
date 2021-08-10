@@ -1,9 +1,7 @@
-package ge.dbera17.finalproject
+package ge.dbera17.finalproject.pages
 
 import android.content.Intent
-import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +10,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import ge.dbera17.finalproject.R
 
 class MainPage : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth

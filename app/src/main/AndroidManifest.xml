@@ -17,9 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registration"/>
-        <activity android:name=".MainPage"/>
-        <activity android:name=".ProfilePage"/>
+        <activity android:name=".pages.Registration"/>
+        <activity android:name=".pages.MainPage"/>
+        <activity android:name=".pages.ProfilePage"/>
     </application>
 
 </manifest>

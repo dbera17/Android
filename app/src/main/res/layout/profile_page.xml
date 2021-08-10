@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfilePage">
+    tools:context=".pages.ProfilePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -46,11 +46,10 @@
             android:layout_width="@dimen/input_item_width"
             android:layout_height="@dimen/input_item_height"
             android:layout_marginTop="@dimen/margin_8"
-            android:autofillHints="profession"
             android:background="@drawable/input_item"
             android:gravity="center"
             android:hint="@string/change_profession_placeholder"
-            android:inputType="textPassword"
+            android:inputType="textPersonName"
             android:paddingHorizontal="@dimen/padding_16"
             android:paddingVertical="@dimen/padding_8"
             android:textColor="@color/black"

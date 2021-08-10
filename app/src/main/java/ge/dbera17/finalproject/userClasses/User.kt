@@ -1,4 +1,4 @@
-package ge.dbera17.finalproject
+package ge.dbera17.finalproject.userClasses
 
 import android.graphics.Bitmap
 import com.google.firebase.database.IgnoreExtraProperties

@@ -1,8 +1,6 @@
-package ge.dbera17.finalproject
+package ge.dbera17.finalproject.pages
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -15,6 +13,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.FirebaseDatabase
+import ge.dbera17.finalproject.R
+import ge.dbera17.finalproject.userClasses.User
 
 
 class Registration : AppCompatActivity() {
