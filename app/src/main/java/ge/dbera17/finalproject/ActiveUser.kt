@@ -2,10 +2,15 @@ package ge.dbera17.finalproject
 
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.util.Log
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class ActiveUser {
@@ -18,12 +23,13 @@ class ActiveUser {
         val db = database.getReference("users")
         val user = User()
 
-        db.child(nickname).get().addOnSuccessListener {
-            val userData = it.value as HashMap<*, *>
+        db.child(nickname).get().addOnSuccessListener { result ->
 
-            user.nickname = userData["nickname"].toString()
-            user.password = userData["password"].toString()
-            user.profession = userData["profession"].toString()
+            val userInfo= result.value as HashMap<*, *>
+
+            user.nickname = userInfo["nickname"].toString()
+            user.password = userInfo["password"].toString()
+            user.profession = userInfo["profession"].toString()
 
             val storageReference = Firebase.storage.reference
             val imageRef = storageReference.child(nickname)
@@ -39,13 +45,13 @@ class ActiveUser {
 
     fun updateUserProfession(nickname: String, profession: String){
         database = Firebase.database
-        val db = database.reference
-        db.child("users").child(nickname).child("profession").setValue(profession)
+        val db = database.getReference("users")
+        db.child(nickname).child("profession").setValue(profession)
     }
     fun updateUserNickname(nickname: String, newNickname: String){
         database = Firebase.database
-        val db = database.reference
-        db.child("users").child(nickname).child("nickname").setValue(newNickname)
+        val db = database.getReference("users")
+        db.child(nickname).child("nickname").setValue(newNickname)
     }
 
     fun uploadUserImage(nickname: String, selectedImage: Uri){

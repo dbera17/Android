@@ -70,7 +70,8 @@ class Registration : AppCompatActivity() {
                 if (task.isSuccessful) {
                     users.push().key?.let{
                         users.child(name).setValue(
-                            User(name, pwd, prof, BitmapFactory.decodeResource(resources,R.drawable.profile_test))
+//                            User(name, pwd, prof, BitmapFactory.decodeResource(resources,R.drawable.profile_test))
+                            User(name, pwd, prof)
                         )
                     }
                     val mainPageInt = Intent(this, MainPage::class.java)
