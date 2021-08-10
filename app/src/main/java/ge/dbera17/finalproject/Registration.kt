@@ -1,6 +1,8 @@
 package ge.dbera17.finalproject
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -68,7 +70,7 @@ class Registration : AppCompatActivity() {
                 if (task.isSuccessful) {
                     users.push().key?.let{
                         users.child(name).setValue(
-                            User(name, pwd, prof)
+                            User(name, pwd, prof, BitmapFactory.decodeResource(resources,R.drawable.profile_test))
                         )
                     }
                     val mainPageInt = Intent(this, MainPage::class.java)
