@@ -120,7 +120,7 @@
             android:layout_gravity="start"
             android:layout_marginHorizontal="@dimen/margin_64"
             android:contentDescription="@string/todo"
-            />
+            app:tint="@color/grey"/>
 
         <ImageButton
             android:id="@+id/mp_profile"

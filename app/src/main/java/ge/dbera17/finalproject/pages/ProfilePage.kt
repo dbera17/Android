@@ -81,7 +81,8 @@ class ProfilePage  : AppCompatActivity(), UserInterface {
 
     private fun setUpButtonListeners() {
         addBtn.setOnClickListener{
-            Toast.makeText(this, "GO TO SEARCH PAGE", Toast.LENGTH_LONG).show()
+            val searchPageInt = Intent(this, SearchPage::class.java)
+            startActivity(searchPageInt)
         }
         homeBtn.setOnClickListener {
             val mainPageInt = Intent(this, MainPage::class.java)

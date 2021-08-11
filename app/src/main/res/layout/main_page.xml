@@ -75,7 +75,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!--            TODO TODO TODO TODO TODO-->
+            <!-- HAD NO TIME TO MANAGE CHAT :( -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="@dimen/text_size_Xlarge"
+                android:text="@string/scroll_placeholder" />
 
         </LinearLayout>
 
@@ -121,7 +127,8 @@
             android:backgroundTint="@color/white"
             android:layout_gravity="end"
             android:layout_marginHorizontal="@dimen/margin_64"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            app:tint="@color/grey"/>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 

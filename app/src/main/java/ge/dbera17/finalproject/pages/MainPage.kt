@@ -38,7 +38,8 @@ class MainPage : AppCompatActivity() {
             Toast.makeText(this, "SEARCH", Toast.LENGTH_LONG).show()
         }
         addBtn.setOnClickListener{
-            Toast.makeText(this, "GO TO SEARCH PAGE", Toast.LENGTH_LONG).show()
+            val searchPageInt = Intent(this, SearchPage::class.java)
+            startActivity(searchPageInt)
         }
         profileBtn.setOnClickListener {
             val profilePageInt = Intent(this, ProfilePage::class.java)
