@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/search_item_height"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
+        android:layout_width="@dimen/search_item_image_size"
+        android:layout_height="@dimen/search_item_image_size"
+        android:layout_gravity=""
+        android:layout_marginStart="@dimen/margin_24"
+        android:src="@drawable/profile_test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_item_text_height"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_24"
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/black"
+        tools:text="Tour de  Bhutan"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_profession"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_item_text_height_description"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_8"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/grey"
+        tools:text="Manager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
