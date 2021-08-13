@@ -1,8 +1,8 @@
 package ge.dbera17.finalproject.userClasses
 
 import android.net.Uri
-import ge.dbera17.finalproject.interfaces.ActiveUserInterface
-import ge.dbera17.finalproject.interfaces.UserInterface
+import ge.dbera17.finalproject.interfaces.userProfileInterfaces.ActiveUserInterface
+import ge.dbera17.finalproject.interfaces.userProfileInterfaces.UserInterface
 
 class ActiveUserMediator(private val view: UserInterface): ActiveUserInterface {
 
@@ -23,5 +23,4 @@ class ActiveUserMediator(private val view: UserInterface): ActiveUserInterface {
     fun uploadUserImage(nickname: String, selectedImage: Uri){
         mediator.uploadUserImage(nickname, selectedImage)
     }
-
 }

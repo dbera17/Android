@@ -1,4 +1,4 @@
-package ge.dbera17.finalproject.interfaces
+package ge.dbera17.finalproject.interfaces.userProfileInterfaces
 
 import ge.dbera17.finalproject.userClasses.User
 

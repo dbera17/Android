@@ -1,4 +1,7 @@
 package ge.dbera17.finalproject.interfaces.searchedUsersInterfaces
 
-interface SearchPageUsersInterface {
+import ge.dbera17.finalproject.userClasses.User
+
+interface SearchedUserMediatorInterface {
+    fun notifyViewForUpdate(users: MutableMap<String, User>)
 }

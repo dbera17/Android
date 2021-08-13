@@ -45,7 +45,7 @@ class ActiveUser(private val mediator: ActiveUserMediator) {
     fun uploadUserImage(nickname: String, selectedImage: Uri){
         val storage = Firebase.storage
         val storageRef = storage.reference
-        val riversRef = storageRef.child(nickname)
-        riversRef.putFile(selectedImage)
+        val currUserStorage = storageRef.child(nickname)
+        currUserStorage.putFile(selectedImage)
     }
 }
