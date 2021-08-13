@@ -8,6 +8,7 @@
     tools:context=".pages.ProfilePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pp_layout"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         tools:context=".MainActivity">
@@ -136,5 +137,11 @@
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
+    <ProgressBar
+        android:id="@+id/pp_progress_bar"
+        android:layout_width="@dimen/icon_size_large"
+        android:layout_height="@dimen/icon_size_large"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/blue"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

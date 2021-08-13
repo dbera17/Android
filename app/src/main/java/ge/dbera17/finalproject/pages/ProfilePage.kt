@@ -4,12 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -17,7 +18,7 @@ import com.google.firebase.ktx.Firebase
 import de.hdodenhof.circleimageview.CircleImageView
 import ge.dbera17.finalproject.MainActivity
 import ge.dbera17.finalproject.R
-import ge.dbera17.finalproject.interfaces.UserInterface
+import ge.dbera17.finalproject.interfaces.userProfileInterfaces.UserInterface
 import ge.dbera17.finalproject.userClasses.ActiveUserMediator
 import ge.dbera17.finalproject.userClasses.User
 
@@ -40,6 +41,9 @@ class ProfilePage  : AppCompatActivity(), UserInterface {
     private val pickImage = 100
     private var imageUri: Uri? = null
 
+    private lateinit var progressBar: ProgressBar
+    private lateinit var layout: ConstraintLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile_page)
@@ -56,6 +60,9 @@ class ProfilePage  : AppCompatActivity(), UserInterface {
         newNickname = findViewById(R.id.pp_nickname)
         newProfession = findViewById(R.id.pp_profession)
 
+        progressBar = findViewById(R.id.pp_progress_bar)
+        layout = findViewById(R.id.pp_layout)
+        layout.visibility = View.INVISIBLE;
         setUpButtonListeners()
     }
 
@@ -114,5 +121,7 @@ class ProfilePage  : AppCompatActivity(), UserInterface {
         if (user.image != null) {
             newImage.setImageBitmap(user.image)
         }
+        layout.visibility = View.VISIBLE;
+        progressBar.visibility = View.INVISIBLE;
     }
 }
