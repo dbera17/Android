@@ -9,13 +9,11 @@
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/search_page_app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/search_item_height"
         android:backgroundTint="@color/blue">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/search_page_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -40,7 +38,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/search_users"
+                    android:id="@+id/sp_search_input"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text"
@@ -60,11 +58,12 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <ProgressBar
-        android:id="@+id/progress_bar"
+        android:id="@+id/sp_progress_bar"
         android:layout_width="@dimen/icon_size_large"
         android:layout_height="@dimen/icon_size_large"
         android:layout_gravity="center"
-        android:indeterminateTint="@color/blue"/>
+        android:layout_marginTop="@dimen/margin_64"
+        android:indeterminateTint="@color/blue" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

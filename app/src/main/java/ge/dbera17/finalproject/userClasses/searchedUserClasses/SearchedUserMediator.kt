@@ -10,8 +10,8 @@ class SearchedUserMediator (private val view: SearchedUserMediatorInterface): Se
     fun getUsers() {
         mediator.getUsers()
     }
-    fun getSearchedUsers(userName: String) {
-        mediator.getSearchedUsers(userName)
+    fun getSearchedUsers(userToSearch: String) {
+        mediator.getSearchedUsers(userToSearch)
     }
     override fun onGetUsersAPISuccess(users: MutableMap<String, User>) {
         view.notifyViewForUpdate(users)

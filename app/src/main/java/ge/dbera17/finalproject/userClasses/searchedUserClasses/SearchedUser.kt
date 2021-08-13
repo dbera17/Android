@@ -33,7 +33,7 @@ class SearchedUser(private val mediator: SearchedUserInterface) {
         }
     }
 
-    fun getSearchedUsers(searchedString: String){
+    fun getSearchedUsers(userToSearch: String){
         val currentUser = Firebase.auth.currentUser?.email.toString()
         val nickname = currentUser.removeSuffix("@gmail.com")
         val users = mutableMapOf<String, User>()
@@ -41,7 +41,7 @@ class SearchedUser(private val mediator: SearchedUserInterface) {
         Firebase.database.reference.child("users").get().addOnSuccessListener { result ->
             val usersInfo = result.value as HashMap<*, *>
             for ((key, value) in usersInfo) {
-                getAllSearchedUsers(key, value, nickname, users, searchedString)
+                getAllSearchedUsers(key, value, nickname, users, userToSearch)
             }
             // Fetching Images For Searched Users
             Firebase.storage.reference.listAll().addOnSuccessListener { (fetchedItems) ->

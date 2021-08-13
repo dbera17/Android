@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_image"
+        android:id="@+id/usc_image"
         android:layout_width="@dimen/search_item_image_size"
         android:layout_height="@dimen/search_item_image_size"
         android:layout_gravity=""
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/user_name"
+        android:id="@+id/usc_name"
         android:layout_width="0dp"
         android:layout_height="@dimen/search_item_text_height"
         android:layout_marginStart="@dimen/margin_24"
@@ -28,11 +28,11 @@
         android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintStart_toEndOf="@+id/usc_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/user_profession"
+        android:id="@+id/usc_profession"
         android:layout_width="0dp"
         android:layout_height="@dimen/search_item_text_height_description"
         android:layout_marginStart="@dimen/margin_24"
@@ -41,7 +41,7 @@
         android:textColor="@color/grey"
         tools:text="Manager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/user_image"
-        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+        app:layout_constraintStart_toEndOf="@+id/usc_image"
+        app:layout_constraintTop_toBottomOf="@+id/usc_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
